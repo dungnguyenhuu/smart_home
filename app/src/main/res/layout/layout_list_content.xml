@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutManager"
+            type="androidx.recyclerview.widget.RecyclerView.LayoutManager" />
+
+        <variable
+            name="controller"
+            type="com.example.smarthomeapp.util.list.IListController" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:enabled="@{safeUnbox(controller.isRefreshEnabled())}"
+            app:srRefreshListener="@{controller::onSwipeRefresh}"
+            app:srRefreshing="@{safeUnbox(controller.isRefreshing())}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="beforeDescendants"
+                app:rvAdapter="@{controller.recyclerViewAdapter()}"
+                app:rvLayoutManager="@{layoutManager}"
+                app:rvLoadmoreListener="@{controller::onRecyclerLoadmore}"
+                tools:listitem="@android:layout/simple_gallery_item" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:viewCompatVisibility="@{safeUnbox(controller.isEmptyData())}"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:onClick="@{_  -> controller.onRequestTryAgain()}"
+                android:src="@{controller.observableEmptyDrawable()}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="@{_ -> controller.onRequestTryAgain()}"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="18dp"
+                android:text="@{controller.observableEmptyMessage()}"
+                android:textColor="@color/colorPrimaryDark"
+                tools:lines="3"
+                tools:text="@tools:sample/lorem/random"
+                tools:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="@style/BaseLoading"
+            android:layout_gravity="center"
+            app:viewCompatVisibility="@{safeUnbox(controller.isLoading())}"
+            tools:visibility="visible" />
+    </FrameLayout>
+</layout>

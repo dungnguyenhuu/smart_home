@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="status"
+            type="com.example.smarthomeapp.data.pojo.device.STATUS" />
+
+        <variable
+            name="device"
+            type="com.example.smarthomeapp.data.pojo.device.Device" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_large"
+        android:background="@drawable/bgr_room_info"
+        android:paddingHorizontal="@dimen/dimen_large"
+        android:paddingVertical="@dimen/dimen_xmedium">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_device"
+            android:layout_width="@dimen/dimen_huge"
+            android:layout_height="@dimen/dimen_huge"
+            android:rotation="45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_lamp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_device_name"
+            style="@style/txtRoomDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dimen_medium"
+            android:text="@{device.name}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/img_device"
+            app:layout_constraintEnd_toStartOf="@id/sw_device"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toTopOf="@id/img_device"
+            tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{device.status == status.ON.value ? true : false}"
+            app:layout_constraintBottom_toBottomOf="@id/img_device"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_device" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_line"
+            android:layout_marginTop="@dimen/dimen_medium"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tv_device_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/propertyDevice"
+            style="@style/txtRoomDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_medium"
+            android:text="@string/voltage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/valueDevice"
+            style="@style/txtRoomDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_xxsmall"
+            android:text="@string/voltage_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_line"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="1"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="2"
+                android:textSize="16sp" />
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="3"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

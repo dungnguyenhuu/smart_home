@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgr_room_info"
+        android:padding="@dimen/dimen_xxmedium">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_device"
+            android:layout_width="@dimen/width_image_room"
+            android:layout_height="@dimen/width_image_room"
+            android:layout_marginStart="@dimen/dimen_xxsmall"
+            android:layout_marginTop="@dimen/dimen_xxsmall"
+            android:src="@drawable/ic_bedroom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_active"
+            style="@style/txtViewRoomInfo"
+            android:layout_marginStart="@dimen/dimen_xxmedium"
+            android:text="@string/row1_top_detail_room"
+            app:layout_constraintBottom_toTopOf="@id/view_line1"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toTopOf="@id/img_device" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/txtViewRoomInfo"
+            android:layout_marginEnd="@dimen/dimen_xxmedium"
+            android:text="@string/number_in_detail_room"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_active" />
+
+        <View
+            android:id="@+id/view_line1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_line"
+            android:layout_marginHorizontal="@dimen/dimen_medium"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/tv_active"
+            app:layout_constraintBottom_toTopOf="@id/tv_inactive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toBottomOf="@id/tv_active" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_inactive"
+            style="@style/txtViewRoomInfo"
+            android:layout_marginStart="@dimen/dimen_xxmedium"
+            android:text="@string/row2_top_detail_room"
+            app:layout_constraintBottom_toTopOf="@id/view_line2"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toBottomOf="@id/view_line1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/txtViewRoomInfo"
+            android:layout_marginEnd="@dimen/dimen_xxmedium"
+            android:text="@string/number_in_detail_room"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_inactive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_inactive" />
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_line"
+            android:layout_marginHorizontal="@dimen/dimen_medium"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toTopOf="@id/tv_usage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toBottomOf="@id/tv_inactive" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_usage"
+            style="@style/txtViewRoomInfo"
+            android:layout_marginStart="@dimen/dimen_xxmedium"
+            android:text="@string/row3_top_detail_room"
+            app:layout_constraintBottom_toBottomOf="@id/img_device"
+            app:layout_constraintStart_toEndOf="@id/img_device"
+            app:layout_constraintTop_toBottomOf="@id/view_line2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/txtViewRoomInfo"
+            android:layout_marginTop="@dimen/dimen_xxsmall"
+            android:layout_marginEnd="@dimen/dimen_xxmedium"
+            android:text="@string/number_WKh_detail_room"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_usage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_usage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

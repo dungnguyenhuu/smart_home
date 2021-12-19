@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_line">1dp</dimen>
+    <dimen name="dimen_tiny">2dp</dimen>
+    <dimen name="dimen_common">15dp</dimen>
+
+    <dimen name="dimen_small">2dp</dimen>
+    <dimen name="dimen_xsmall">4dp</dimen>
+    <dimen name="dimen_xxsmall">6dp</dimen>
+    <dimen name="dimen_xxxsmall">8dp</dimen>
+
+    <dimen name="dimen_medium">10dp</dimen>
+    <dimen name="dimen_xmedium">12dp</dimen>
+    <dimen name="dimen_xxmedium">14dp</dimen>
+    <dimen name="dimen_xxxmedium">16dp</dimen>
+
+    <dimen name="dimen_large">20dp</dimen>
+    <dimen name="dimen_xlarge">24dp</dimen>
+    <dimen name="dimen_xxlarge">28dp</dimen>
+    <dimen name="dimen_xxxlarge">32dp</dimen>
+
+    <dimen name="dimen_huge">40dp</dimen>
+    <dimen name="dimen_giant">60dp</dimen>
+
+    <dimen name="font_small">6sp</dimen>
+    <dimen name="font_xsmall">8sp</dimen>
+    <dimen name="font_xxsmall">10sp</dimen>
+    <dimen name="font_xxxsmall">12sp</dimen>
+
+    <dimen name="font_medium">14sp</dimen>
+    <dimen name="font_xmedium">16sp</dimen>
+    <dimen name="font_xxmedium">18sp</dimen>
+    <dimen name="font_xxxmedium">20sp</dimen>
+
+    <dimen name="font_large">24sp</dimen>
+    <dimen name="font_xlarge">28sp</dimen>
+    <dimen name="font_xxlarge">32sp</dimen>
+    <dimen name="font_xxxlarge">36sp</dimen>
+
+    <dimen name="radius_small">2dp</dimen>
+    <dimen name="radius_xsmall">4dp</dimen>
+    <dimen name="radius_xxsmall">6dp</dimen>
+    <dimen name="radius_xxxsmall">8dp</dimen>
+
+    <dimen name="radius_medium">10dp</dimen>
+    <dimen name="radius_xmedium">12dp</dimen>
+    <dimen name="radius_xxmedium">14dp</dimen>
+    <dimen name="radius_xxxmedium">16dp</dimen>
+
+    <dimen name="radius_large">20dp</dimen>
+    <dimen name="radius_xlarge">24dp</dimen>
+    <dimen name="radius_xxlarge">28dp</dimen>
+    <dimen name="radius_xxxlarge">32dp</dimen>
+
+    <dimen name="bottom_nav_height">48dp</dimen>
+    <dimen name="image_size">72dp</dimen>
+    <dimen name="avatar_size">96dp</dimen>
+    <dimen name="room_size">160dp</dimen>
+    <dimen name="logo_size">144dp</dimen>
+
+    <dimen name="background_top">150dp</dimen>
+    <dimen name="background_round">50dp</dimen>
+    <dimen name="notification_height">90dp</dimen>
+    <dimen name="notification_icon_size">48dp</dimen>
+
+    <dimen name="width_image_room">108dp</dimen>
+</resources>

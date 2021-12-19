@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.smarthomeapp.presentation.authentication.register.contract.RegisterContract.ViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgr_gradient2" >
+
+        <include
+            android:id="@+id/view_banner"
+            layout="@layout/layout_banner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_name"
+            style="@style/editTextCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxmedium"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="@dimen/dimen_xxsmall"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/dimen_xxsmall"
+            android:text="@={vm.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_banner" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_email"
+            style="@style/editTextCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxmedium"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="@dimen/dimen_xxsmall"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/dimen_xxsmall"
+            android:text="@={vm.email}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_name" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_password"
+            style="@style/editTextCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxmedium"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="@dimen/dimen_xxsmall"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/dimen_xxsmall"
+            android:text="@={vm.password}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_confirm_password"
+            style="@style/editTextCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxmedium"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="@dimen/dimen_xxsmall"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:padding="@dimen/dimen_xxsmall"
+            android:text="@={vm.confirmPassword}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            style="@style/Widget.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxxlarge"
+            android:background="@drawable/bgr_round"
+            android:onClick="@{_->vm.onClickRegister()}"
+            android:text="@string/register"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_xxmedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_confirm_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

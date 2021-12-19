@@ -1,0 +1,41 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="room"
+            type="com.example.smarthomeapp.data.pojo.room.Room" />
+
+    </data>
+
+    <FrameLayout
+        style="@style/Widget.Clickable"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bgr_round_border2"
+        android:elevation="@dimen/dimen_large">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/dimen_huge"
+            android:paddingTop="@dimen/dimen_huge"
+            android:paddingBottom="@dimen/dimen_giant"
+            android:scaleType="centerInside"
+            tools:src="@drawable/ic_living_room" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dimen_common"
+            android:text="@{room.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_xmedium"
+            tools:text="Living Room" />
+
+    </FrameLayout>
+</layout>

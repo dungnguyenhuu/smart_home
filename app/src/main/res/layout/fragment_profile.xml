@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.smarthomeapp.presentation.main.profile.contract.ProfileContract.ViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/view_toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/profile}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_large"
+            android:layout_marginTop="@dimen/dimen_large"
+            android:src="@drawable/ic_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_toolbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            style="@style/Widget.Clickable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_large"
+            android:layout_marginTop="@dimen/dimen_medium"
+            android:text="@{vm.user.name}"
+            app:layout_constraintBottom_toTopOf="@id/tv_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_avatar"
+            app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{vm.user.email}"
+            app:layout_constraintBottom_toBottomOf="@id/img_avatar"
+            app:layout_constraintEnd_toEndOf="@id/tv_name"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <FrameLayout
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_large"
+            app:layout_constraintBottom_toTopOf="@id/tv_logout"
+            app:layout_constraintTop_toBottomOf="@id/img_avatar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_logout"
+            android:drawablePadding="@dimen/dimen_large"
+            android:gravity="center|start"
+            android:paddingHorizontal="@dimen/dimen_large"
+            android:paddingVertical="@dimen/dimen_xsmall"
+            android:text="@string/logout"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_xxmedium"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="iconLeft"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="onLeftClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="iconRight"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="onRightClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/grey_transparent"
+        android:focusableInTouchMode="true"
+        android:paddingHorizontal="@dimen/dimen_common">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onLeftClick}"
+            android:src="@{iconLeft}"
+            android:visibility="@{iconLeft == null ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_xxmedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onRightClick}"
+            android:src="@{iconRight}"
+            android:visibility="@{iconRight == null ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

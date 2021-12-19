@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary1">#1E71B8</color>
+    <color name="colorPrimary">#FDA43C</color>
+    <color name="colorHintText">#593A16</color>
+    <color name="colorPrimaryDark">#035aa6</color>
+    <color name="colorAccent">#004472</color>
+    <color name="colorInverse">@android:color/white</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#9b9b9b</color>
+    <color name="red">#CC2128</color>
+    <color name="orange">#D5652B</color>
+    <color name="yellow">#EFC030</color>
+    <color name="dark_yellow">#E0922E</color>
+    <color name="light_green">#9EC54C</color>
+
+    <color name="shadowModal">#80000000</color>
+    <color name="dialogShadowModal">#9634343d</color>
+    <color name="background">#222831</color>
+    <color name="button_background">#393E46</color>
+    <color name="grey_transparent">#80DDDDDD</color>
+</resources>

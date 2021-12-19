@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import
+            alias="RLMH"
+            type="com.example.smarthomeapp.util.helper.RecyclerViewLayoutManagerHelper" />
+
+        <variable
+            name="vm"
+            type="com.example.smarthomeapp.presentation.main.notification.contract.NotificationContract.ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/view_toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/notification}" />
+
+        <include
+            layout="@layout/layout_list_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:controller="@{vm.notificationController}"
+            app:layoutManager="@{RLMH.linear(context, RLMH.VERT, false)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_toolbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

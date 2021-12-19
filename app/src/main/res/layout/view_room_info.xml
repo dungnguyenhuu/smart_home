@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_xxmedium">
+
+        <include
+            android:id="@+id/view_room_info_header"
+            layout="@layout/view_room_info_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_all_devices"
+            style="@style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_xxmedium"
+            android:background="@drawable/bgr_round"
+            android:text="@string/turn_off_all_devices"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/view_room_info_header" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

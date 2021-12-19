@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="itemIcon"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="itemSelected"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        style="@style/Widget.Clickable"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:onClick="@{onClick}"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_xxsmall"
+        app:viewCompatSelected="@{itemSelected}"
+        tools:layout_height="@dimen/bottom_nav_height"
+        tools:layout_width="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:scaleType="fitCenter"
+            android:src="@{itemIcon}"
+            app:tint="@color/bottom_navigation_selector"
+            tools:src="@drawable/nav_home"
+            tools:tint="@color/gray" />
+
+    </LinearLayout>
+
+</layout>
