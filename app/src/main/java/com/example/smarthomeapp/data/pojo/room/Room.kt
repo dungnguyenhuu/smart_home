@@ -5,6 +5,7 @@ import com.example.smarthomeapp.data.pojo.device.Device
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+import java.util.*
 
 data class Room(
     @SerializedName("id") @Expose val id: Int,
