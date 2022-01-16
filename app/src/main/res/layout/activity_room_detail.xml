@@ -66,11 +66,12 @@
                 android:gravity="center"
                 android:text="@{String.format(@string/format_humidity, vm.sensor.humidityAir)}"
                 android:textColor="@color/black"
+                android:paddingVertical="@dimen/dimen_xxxsmall"
                 app:layout_constraintEnd_toStartOf="@id/tv_temperature"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view_room_info"
                 tools:text="@tools:sample/us_zipcodes"
-                android:background="@color/colorPrimary"/>
+                android:background="@drawable/bgr_round"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_temperature"
@@ -82,13 +83,14 @@
                 android:gravity="center"
                 android:text="@{String.format(@string/format_temperature, vm.sensor.temperature)}"
                 android:textColor="@color/black"
+                android:paddingVertical="@dimen/dimen_xxxsmall"
                 app:layout_constraintBottom_toBottomOf="@id/tv_humidity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_humidity"
                 app:layout_constraintTop_toTopOf="@id/tv_humidity"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="@tools:sample/us_zipcodes"
-                android:background="@color/colorPrimary"/>
+                android:background="@drawable/bgr_round"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_device"
