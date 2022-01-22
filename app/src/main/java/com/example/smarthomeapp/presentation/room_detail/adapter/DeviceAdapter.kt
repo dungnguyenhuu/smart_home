@@ -1,11 +1,13 @@
 package com.example.smarthomeapp.presentation.room_detail.adapter
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.adapter.BindingArrayAdapter
 import com.example.smarthomeapp.base.holder.BindingHolder
 import com.example.smarthomeapp.data.pojo.device.Device
+import com.example.smarthomeapp.data.pojo.device.STATUS
 import com.example.smarthomeapp.databinding.ItemDeviceBinding
 
 class DeviceAdapter : BindingArrayAdapter<Device>() {
@@ -30,8 +32,9 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
             super.onBind(position, model)
             binder.apply {
                 device = model
+                swDevice.isChecked = device?.status== STATUS.ON.value
                 when (device?.name) {
-                    "Air Condition" -> imgDevice.setImageResource(imgs[1])
+                    "Fan" -> imgDevice.setImageResource(imgs[1])
                     "Door" -> imgDevice.setImageResource(imgs[2])
                     else -> imgDevice.setImageResource(imgs[0])
                 }

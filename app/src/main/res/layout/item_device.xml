@@ -44,11 +44,20 @@
             app:layout_constraintTop_toTopOf="@id/img_device"
             tools:text="@tools:sample/lorem" />
 
+<!--        <androidx.appcompat.widget.SwitchCompat-->
+<!--            android:id="@+id/sw_device"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="@{device.status == status.ON.value ? true : false}"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/img_device"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@id/img_device" />-->
+
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/sw_device"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="@{device.status == status.ON.value ? true : false}"
+            android:checked="true"
             app:layout_constraintBottom_toBottomOf="@id/img_device"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/img_device" />
