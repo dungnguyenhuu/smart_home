@@ -34,5 +34,4 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
     override fun navBack() {
         onBackPressed()
     }
-
 }

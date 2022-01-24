@@ -3,6 +3,7 @@ package com.example.smarthomeapp.presentation.room_detail.contract
 import android.app.Application
 import android.view.View
 import androidx.lifecycle.*
+import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.adapter.OnItemClick
 import com.example.smarthomeapp.base.annotation.LoadingType
 import com.example.smarthomeapp.base.viewmodel.AndroidIteratorViewModel
@@ -27,6 +28,12 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     AndroidIteratorViewModel<RoomDetailContract.Scene>(application), RoomDetailContract.ViewModel,
     LifecycleObserver {
 
+    private val imgs = intArrayOf(
+        R.drawable.ic_living_room,
+        R.drawable.ic_bathroom,
+        R.drawable.ic_bedroom,
+        R.drawable.ic_living_room
+    )
     @Inject
     lateinit var getDevicesInRoomUseCase: GetDevicesInRoomUseCase
 
@@ -38,6 +45,8 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
 
     private var liveRoom = MutableLiveData<Room>()
     private var liveSensor = MutableLiveData<Sensor>()
+
+    private var imageResource = MutableLiveData<Int>()
 
     private var adapter = DeviceAdapter().apply {
         setItemClickListener(object : OnItemClick<Device?> {
@@ -58,6 +67,17 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
         liveRoom.value = room
         getDevices(liveRoom.value!!.id)
         getSensors(GetSensorRequest(0, 0))
+
+        setImageResource()
+    }
+
+    private fun setImageResource() {
+        when (liveRoom.value?.name) {
+            "Bathroom" -> imageResource.value = R.drawable.ic_bathroom
+            "Bedroom" -> imageResource.value = R.drawable.ic_bedroom
+            "Kitchen" -> imageResource.value = R.drawable.ic_kitchen
+            "Living Room" -> imageResource.value = R.drawable.room_template_1
+        }
     }
 
     override fun onAttachLifecycle(owner: LifecycleOwner) {
@@ -80,6 +100,8 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     override fun getAdapter() = adapter
 
     override fun getSensor() = liveSensor
+
+    override fun getImageResource() = imageResource
 
     private fun getDevices(roomId: Int) {
         fetch(

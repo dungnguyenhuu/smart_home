@@ -1,6 +1,9 @@
 package com.example.smarthomeapp.base.scene
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
@@ -40,6 +43,7 @@ abstract class BaseActivity<SCENE : BaseContract.Scene, VIEWMODEL : BaseContract
         initViewModel()
     }
     private var loadingDialogWeakReference: WeakReference<DialogFragment?> = WeakReference(null)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
