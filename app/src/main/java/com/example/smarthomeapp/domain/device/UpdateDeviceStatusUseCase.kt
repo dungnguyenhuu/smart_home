@@ -8,12 +8,12 @@ import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
 class UpdateDeviceStatusUseCase @Inject constructor() :
-    SingleUseCase<UpdateDeviceStatusResponse, Pair<Int, UpdateDeviceStatusRequest>>() {
+    SingleUseCase<UpdateDeviceStatusResponse, Pair<String, UpdateDeviceStatusRequest>>() {
 
     @Inject
     lateinit var repository: ClientRepository
 
-    override fun create(params: Pair<Int, UpdateDeviceStatusRequest>?): Single<out UpdateDeviceStatusResponse> {
+    override fun create(params: Pair<String, UpdateDeviceStatusRequest>?): Single<out UpdateDeviceStatusResponse> {
         return params?.let {
             Single.defer {
                 repository.updateDeviceStatus(it.first, it.second)

@@ -28,7 +28,7 @@ interface ClientRepository {
     fun getAllDevices(): Single<GetAllDevicesResponse>
 
     fun updateDeviceStatus(
-        id: Int,
+        id: String,
         @NonNull @Body request: UpdateDeviceStatusRequest
     ): Single<UpdateDeviceStatusResponse>
 

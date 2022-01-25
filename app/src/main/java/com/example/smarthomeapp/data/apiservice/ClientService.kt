@@ -37,7 +37,7 @@ interface ClientService {
     @PATCH("/devices/{id}")
     @Headers(Retrofits.HEADER_NO_AUTH)
     fun updateDeviceStatus(
-        @Path("id") id: Int,
+        @Path("id") id: String,
         @NonNull @Body request: UpdateDeviceStatusRequest
     ): Single<UpdateDeviceStatusResponse>
 

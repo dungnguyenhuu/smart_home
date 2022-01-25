@@ -55,7 +55,7 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
                     STATUS.OFF.value
                 } else STATUS.ON.value
                 val param = UpdateDeviceStatusRequest(status)
-                val pair = Pair(t!!.id, param)
+                val pair = Pair(t!!.db_id, param)
                 updateDeviceStatus(pair)
             }
         })
@@ -125,7 +125,7 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
         )
     }
 
-    private fun updateDeviceStatus(pair: Pair<Int, UpdateDeviceStatusRequest>) {
+    private fun updateDeviceStatus(pair: Pair<String, UpdateDeviceStatusRequest>) {
         fetch(
             updateDeviceStatusUseCase,
             object : ApiCallback<UpdateDeviceStatusResponse>(LoadingType.BLOCKING) {
