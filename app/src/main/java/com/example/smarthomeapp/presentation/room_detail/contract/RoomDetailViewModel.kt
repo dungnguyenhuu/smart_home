@@ -131,6 +131,7 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
             object : ApiCallback<UpdateDeviceStatusResponse>(LoadingType.BLOCKING) {
                 override fun onApiResponseSuccess(response: UpdateDeviceStatusResponse) {
                     Timber.d(response.message)
+                    getDevices(liveRoom.value!!.id)
                 }
             }, pair
         )
