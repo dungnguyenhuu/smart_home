@@ -6,9 +6,7 @@ import com.example.smarthomeapp.data.pojo.Response
 import com.example.smarthomeapp.data.pojo.authentication.LoginRequest
 import com.example.smarthomeapp.data.pojo.authentication.LoginResponse
 import com.example.smarthomeapp.data.pojo.authentication.RegisterRequest
-import com.example.smarthomeapp.data.pojo.device.GetAllDevicesResponse
-import com.example.smarthomeapp.data.pojo.device.UpdateDeviceStatusRequest
-import com.example.smarthomeapp.data.pojo.device.UpdateDeviceStatusResponse
+import com.example.smarthomeapp.data.pojo.device.*
 import com.example.smarthomeapp.data.pojo.room.GetAllRoomsResponse
 import com.example.smarthomeapp.data.pojo.room.GetDevicesInRoomResponse
 import com.example.smarthomeapp.data.pojo.sensor.GetSensorResponse
@@ -33,6 +31,12 @@ interface ClientService {
 
     @GET("/devices")
     fun getAllDevices(): Single<GetAllDevicesResponse>
+
+    @POST("/devices")
+    @Headers(Retrofits.HEADER_NO_AUTH)
+    fun postNewDevices(
+        @NonNull @Body request: NewDeviceRequest
+    ): Single<PostNewDevicesResponse>
 
     @PATCH("/devices/{id}")
     @Headers(Retrofits.HEADER_NO_AUTH)

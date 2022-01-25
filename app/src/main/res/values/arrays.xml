@@ -13,4 +13,11 @@
         <item>hour</item>
         <item>day</item>
     </string-array>
+
+    <!-- spinner type device-->
+    <string-array name="TypeDevice">
+        <item>Light</item>
+        <item>Door</item>
+        <item>Fan</item>
+    </string-array>
 </resources>

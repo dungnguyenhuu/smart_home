@@ -18,11 +18,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_large">
 
             <include
                 android:id="@+id/view_toolbar"
@@ -107,8 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Button"
-                android:text="Add device"
-                android:background="@color/colorPrimary"
+                android:text="@string/btn_add"
+                android:background="@drawable/bgr_round"
                 android:layout_marginHorizontal="@dimen/dimen_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

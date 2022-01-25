@@ -56,4 +56,9 @@
     <string name="format_humidity">%.1f %%</string>
     <string name="format_temperature">%.1f oC</string>
     <string name="logout">Logout</string>
+
+    <!--    fragment add new device-->
+    <string name="name_device">Name Device</string>
+    <string name="name_room">Name Room</string>
+    <string name="btn_add">Add New Device</string>
 </resources>

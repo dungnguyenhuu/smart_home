@@ -1,6 +1,5 @@
 package com.example.smarthomeapp.presentation.room_detail.adapter
 
-import android.util.Log
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.example.smarthomeapp.R
@@ -25,17 +24,18 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
         private val imgs = intArrayOf(
             R.drawable.ic_light,
             R.drawable.ic_fan,
-            R.drawable.ic_door
+            R.drawable.ic_door,
         )
 
         override fun onBind(position: Int, model: Device?) {
             super.onBind(position, model)
             binder.apply {
                 device = model
-                swDevice.isChecked = device?.status== STATUS.ON.value
-                when (device?.name) {
-                    "Fan" -> imgDevice.setImageResource(imgs[1])
-                    "Door" -> imgDevice.setImageResource(imgs[2])
+                swDevice.isChecked = device?.status == STATUS.ON.value
+                when (device?.type) {
+                    1 -> imgDevice.setImageResource(imgs[2])
+                    2 -> imgDevice.setImageResource(imgs[0])
+                    3 -> imgDevice.setImageResource(imgs[1])
                     else -> imgDevice.setImageResource(imgs[0])
                 }
                 registerChildViewAsHolderClickEvent(swDevice, mItemClickListener)

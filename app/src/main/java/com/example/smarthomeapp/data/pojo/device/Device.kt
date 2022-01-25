@@ -4,10 +4,11 @@ import com.example.smarthomeapp.data.pojo.Response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
+import java.util.*
 
 data class Device(
     @SerializedName("_id") @Expose val db_id: String,
-    @SerializedName("id") @Expose val id: Int,
+    @SerializedName("type") @Expose val type: Int,
     @SerializedName("room_id") @Expose val roomId: String,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("status") @Expose val status: String
@@ -28,5 +29,16 @@ data class UpdateDeviceStatusRequest(
 )
 
 data class UpdateDeviceStatusResponse(
+    val device: Device
+) : Response()
+
+data class NewDeviceRequest(
+    @SerializedName("type") @Expose val type: Int,
+    @SerializedName("room_id") @Expose val roomId: String,
+    @SerializedName("name") @Expose val name: String,
+    @SerializedName("status") @Expose val status: String
+)
+
+data class PostNewDevicesResponse(
     val device: Device
 ) : Response()
