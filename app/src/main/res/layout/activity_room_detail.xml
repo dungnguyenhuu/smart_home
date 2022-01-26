@@ -111,6 +111,7 @@
                 style="@style/Widget.Button"
                 android:text="@string/btn_add"
                 android:background="@drawable/bgr_round"
+                android:onClick="@{_->vm.addDevice()}"
                 android:layout_marginHorizontal="@dimen/dimen_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

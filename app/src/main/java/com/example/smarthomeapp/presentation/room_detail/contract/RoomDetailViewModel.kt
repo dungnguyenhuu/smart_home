@@ -2,6 +2,7 @@ package com.example.smarthomeapp.presentation.room_detail.contract
 
 import android.app.Application
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.*
 import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.adapter.OnItemClick
@@ -102,6 +103,9 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     override fun getSensor() = liveSensor
 
     override fun getImageResource() = imageResource
+    override fun addDevice() {
+        Toast.makeText(getApplication(), "Add Device", Toast.LENGTH_SHORT).show()
+    }
 
     private fun getDevices(roomId: Int) {
         fetch(

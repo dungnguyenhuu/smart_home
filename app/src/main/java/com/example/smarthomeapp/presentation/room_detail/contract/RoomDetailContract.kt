@@ -25,6 +25,8 @@ interface RoomDetailContract {
         fun getSensor(): MutableLiveData<Sensor>
 
         fun getImageResource(): MutableLiveData<Int>
+
+        fun addDevice()
     }
 
 }
