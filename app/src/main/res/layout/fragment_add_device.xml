@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.smarthomeapp.presentation.device.contract.DeviceContract.ViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <include
+            android:id="@+id/view_toolbar"
+            layout="@layout/layout_toolbar"
+            app:iconLeft="@{@drawable/ic_back}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onLeftClick="@{_->vm.onBack()}"
+            app:title="@{vm.room.name}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
+            android:layout_marginTop="@dimen/dimen_xxxlarge"
+            android:hint="@string/name_room"
+            app:layout_constraintTop_toBottomOf="@+id/view_toolbar">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_room"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="@{vm.room.name}"
+                android:enabled="false"
+                android:padding="@dimen/dimen_xxmedium"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/spn_device_type"
-            style="@style/editTextCustomer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/TypeDevice"
-            android:layout_marginVertical="@dimen/dimen_common"
+            android:layout_marginTop="@dimen/dimen_common"
+            android:layout_marginBottom="@dimen/dimen_common"
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
             android:padding="@dimen/dimen_xxmedium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/til_room" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_name_device"
@@ -24,36 +57,15 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
             android:layout_marginTop="@dimen/dimen_medium"
-            app:hintEnabled="false"
+            android:hint="@string/name_device"
             app:layout_constraintTop_toBottomOf="@+id/spn_device_type">
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_name_device"
-                style="@style/editTextCustomer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/name_device"
                 android:inputType="text"
-                android:padding="@dimen/dimen_xxmedium"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_room"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
-            android:layout_marginTop="@dimen/dimen_medium"
-            app:hintEnabled="false"
-            app:layout_constraintTop_toBottomOf="@+id/til_name_device">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/edt_room"
-                style="@style/editTextCustomer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/name_room"
-                android:inputType="text"
-                android:enabled="false"
+                android:text="@={vm.deviceName}"
                 android:padding="@dimen/dimen_xxmedium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,13 +75,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
-            android:layout_marginTop="@dimen/dimen_xxmedium"
+            android:layout_marginTop="@dimen/dimen_xxxlarge"
             android:background="@drawable/bgr_round"
             android:text="@string/btn_add"
             android:textColor="@color/black"
             android:textSize="@dimen/font_xxmedium"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/til_room" />
+            android:onClick="@{_->vm.addDevice()}"
+            app:layout_constraintTop_toBottomOf="@id/til_name_device" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

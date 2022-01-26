@@ -2,6 +2,7 @@
 package com.example.smarthomeapp.presentation.device.contract
 
 import android.app.Application
+import android.widget.Toast
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
@@ -24,7 +25,7 @@ class DeviceViewModel @Inject constructor(application: Application) :
     lateinit var postNewDeviceUseCase: PostNewDeviceUseCase
 
     private var liveRoom = MutableLiveData<Room>()
-    private var nameDevice = MutableLiveData<String>()
+    private var deviceName = MutableLiveData<String>()
 
     override fun onViewModelCreated() {
         super.onViewModelCreated()
@@ -44,19 +45,20 @@ class DeviceViewModel @Inject constructor(application: Application) :
 
     override fun getRoom() = liveRoom
 
-    override fun getNameDevice() = nameDevice
+    override fun getDeviceName() = deviceName
 
     override fun addDevice() {
-        val deviceRequest = NewDeviceRequest(1, "1", "Light 1", STATUS.ON.value)
-        fetch(
-            postNewDeviceUseCase,
-            object : ApiCallback<PostNewDevicesResponse>(LoadingType.BLOCKING) {
-                override fun onApiResponseSuccess(response: PostNewDevicesResponse) {
-                    Timber.d(response.message)
-                    scene?.navBack()
-                }
-            },deviceRequest
-        )
+        val deviceRequest = NewDeviceRequest(1, "${liveRoom.value?.id}", "${deviceName.value}", STATUS.OFF.value)
+        Toast.makeText(getApplication(), "$deviceRequest", Toast.LENGTH_SHORT).show()
+//        fetch(
+//            postNewDeviceUseCase,
+//            object : ApiCallback<PostNewDevicesResponse>(LoadingType.BLOCKING) {
+//                override fun onApiResponseSuccess(response: PostNewDevicesResponse) {
+//                    Timber.d(response.message)
+//                    scene?.navBack()
+//                }
+//            },deviceRequest
+//        )
     }
 
 

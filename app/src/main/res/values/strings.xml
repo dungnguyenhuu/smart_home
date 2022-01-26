@@ -58,7 +58,7 @@
     <string name="logout">Logout</string>
 
     <!--    fragment add new device-->
-    <string name="name_device">Name Device</string>
-    <string name="name_room">Name Room</string>
+    <string name="name_device">Device name </string>
+    <string name="name_room">Room</string>
     <string name="btn_add">Add New Device</string>
 </resources>
