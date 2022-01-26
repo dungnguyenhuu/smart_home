@@ -32,6 +32,9 @@
         <activity
             android:name=".presentation.room_detail.RoomDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.device.DeviceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -103,9 +103,9 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     override fun getSensor() = liveSensor
 
     override fun getImageResource() = imageResource
+
     override fun addDevice() {
-//        liveRoom.value?.let { scene?.onNavigate(it) }
-        Toast.makeText(getApplication(), "Add Device", Toast.LENGTH_SHORT).show()
+        liveRoom.value?.let { scene?.onNavigate(it) }
     }
 
     private fun getDevices(roomId: Int) {
