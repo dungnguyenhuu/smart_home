@@ -8,6 +8,7 @@ import com.example.smarthomeapp.BR
 import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.scene.MvvmActivity
 import com.example.smarthomeapp.data.pojo.room.Room
+import com.example.smarthomeapp.presentation.device.startDevice
 import com.example.smarthomeapp.presentation.room_detail.contract.RoomDetailContract
 import com.example.smarthomeapp.presentation.room_detail.contract.RoomDetailViewModel
 
@@ -33,5 +34,9 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
 
     override fun navBack() {
         onBackPressed()
+    }
+
+    override fun onNavigate(room: Room) {
+        this.startDevice(room)
     }
 }

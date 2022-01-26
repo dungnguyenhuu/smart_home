@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.smarthomeapp.presentation.authentication.contract.AuthenticationViewModel
 import com.example.smarthomeapp.presentation.authentication.login.contract.LoginViewModel
 import com.example.smarthomeapp.presentation.authentication.register.contract.RegisterViewModel
+import com.example.smarthomeapp.presentation.device.contract.DeviceViewModel
 import com.example.smarthomeapp.presentation.main.contract.MainViewModel
 import com.example.smarthomeapp.presentation.main.home.contract.HomeViewModel
 import com.example.smarthomeapp.presentation.main.notification.contract.NotificationViewModel
@@ -99,6 +100,11 @@ abstract class IViewModelProvider {
     @Binds
     @IntoMap
     abstract fun provideRoomDetailViewModel(vm: RoomDetailViewModel): AndroidViewModel
+
+    @AndroidViewModelKey(DeviceViewModel::class)
+    @Binds
+    @IntoMap
+    abstract fun provideDeviceViewModel(vm: DeviceViewModel): AndroidViewModel
 
     @AndroidViewModelKey(AuthenticationViewModel::class)
     @Binds
