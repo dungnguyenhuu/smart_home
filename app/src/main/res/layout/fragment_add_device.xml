@@ -43,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/TypeDevice"
+            android:selectedItemPosition="@={vm.deviceType}"
             android:layout_marginTop="@dimen/dimen_common"
             android:layout_marginBottom="@dimen/dimen_common"
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"

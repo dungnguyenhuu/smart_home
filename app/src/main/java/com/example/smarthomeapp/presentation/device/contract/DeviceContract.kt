@@ -17,6 +17,8 @@ interface DeviceContract {
 
         fun getRoom(): MutableLiveData<Room>
 
+        fun getDeviceType(): MutableLiveData<Int>
+
         fun getDeviceName(): MutableLiveData<String>
 
         fun addDevice()

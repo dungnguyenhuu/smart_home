@@ -33,9 +33,9 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
                 device = model
                 swDevice.isChecked = device?.status == STATUS.ON.value
                 when (device?.type) {
-                    1 -> imgDevice.setImageResource(imgs[2])
-                    2 -> imgDevice.setImageResource(imgs[0])
-                    3 -> imgDevice.setImageResource(imgs[1])
+                    0 -> imgDevice.setImageResource(imgs[0])
+                    1 -> imgDevice.setImageResource(imgs[1])
+                    2 -> imgDevice.setImageResource(imgs[2])
                     else -> imgDevice.setImageResource(imgs[0])
                 }
                 registerChildViewAsHolderClickEvent(swDevice, mItemClickListener)

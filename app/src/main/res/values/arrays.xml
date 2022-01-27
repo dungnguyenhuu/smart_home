@@ -17,7 +17,7 @@
     <!-- spinner type device-->
     <string-array name="TypeDevice">
         <item>Light</item>
-        <item>Door</item>
         <item>Fan</item>
+        <item>Door</item>
     </string-array>
 </resources>

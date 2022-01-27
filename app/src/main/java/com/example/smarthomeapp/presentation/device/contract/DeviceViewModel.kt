@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.R
 import com.example.smarthomeapp.base.annotation.LoadingType
 import com.example.smarthomeapp.base.viewmodel.AndroidIteratorViewModel
 import com.example.smarthomeapp.data.pojo.device.NewDeviceRequest
@@ -25,12 +26,15 @@ class DeviceViewModel @Inject constructor(application: Application) :
     lateinit var postNewDeviceUseCase: PostNewDeviceUseCase
 
     private var liveRoom = MutableLiveData<Room>()
+    private var deviceType = MutableLiveData<Int>()
     private var deviceName = MutableLiveData<String>()
 
     override fun onViewModelCreated() {
         super.onViewModelCreated()
         val room: Room = arguments?.getSerializable(ROOM) as Room
         liveRoom.value = room
+        deviceType.value = 0
+
     }
 
     override fun onAttachLifecycle(owner: LifecycleOwner) {
@@ -45,20 +49,22 @@ class DeviceViewModel @Inject constructor(application: Application) :
 
     override fun getRoom() = liveRoom
 
+    override fun getDeviceType() = deviceType
+
     override fun getDeviceName() = deviceName
 
     override fun addDevice() {
-        val deviceRequest = NewDeviceRequest(1, "${liveRoom.value?.id}", "${deviceName.value}", STATUS.OFF.value)
-        Toast.makeText(getApplication(), "$deviceRequest", Toast.LENGTH_SHORT).show()
-//        fetch(
-//            postNewDeviceUseCase,
-//            object : ApiCallback<PostNewDevicesResponse>(LoadingType.BLOCKING) {
-//                override fun onApiResponseSuccess(response: PostNewDevicesResponse) {
-//                    Timber.d(response.message)
-//                    scene?.navBack()
-//                }
-//            },deviceRequest
-//        )
+        val deviceRequest = NewDeviceRequest(deviceType.value!!, "${liveRoom.value?.id}", "${deviceName.value}", STATUS.OFF.value)
+        fetch(
+            postNewDeviceUseCase,
+            object : ApiCallback<PostNewDevicesResponse>(LoadingType.BLOCKING) {
+                override fun onApiResponseSuccess(response: PostNewDevicesResponse) {
+                    Timber.d(response.message)
+                    Toast.makeText(getApplication(), "Add device successfully", Toast.LENGTH_SHORT).show()
+                    scene?.navBack()
+                }
+            },deviceRequest
+        )
     }
 
 
