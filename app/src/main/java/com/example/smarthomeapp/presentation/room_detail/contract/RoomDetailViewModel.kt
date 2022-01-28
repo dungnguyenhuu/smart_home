@@ -29,11 +29,11 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     AndroidIteratorViewModel<RoomDetailContract.Scene>(application), RoomDetailContract.ViewModel,
     LifecycleObserver {
 
-    private val imgs = intArrayOf(
+    private val roomIcons = intArrayOf(
         R.drawable.ic_living_room,
         R.drawable.ic_bathroom,
         R.drawable.ic_bedroom,
-        R.drawable.ic_living_room
+        R.drawable.ic_kitchen
     )
     @Inject
     lateinit var getDevicesInRoomUseCase: GetDevicesInRoomUseCase
@@ -74,10 +74,18 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
 
     private fun setImageResource() {
         when (liveRoom.value?.name) {
-            "Bathroom" -> imageResource.value = R.drawable.ic_bathroom
-            "Bedroom" -> imageResource.value = R.drawable.ic_bedroom
-            "Kitchen" -> imageResource.value = R.drawable.ic_kitchen
-            "Living Room" -> imageResource.value = R.drawable.room_template_1
+            "Bathroom" -> {
+                imageResource.value = R.drawable.room_template_4
+            }
+            "Bedroom" -> {
+                imageResource.value = R.drawable.room_template_3
+            }
+            "Kitchen" -> {
+                imageResource.value = R.drawable.room_template_2
+            }
+            "Living Room" -> {
+                imageResource.value = R.drawable.room_template_1
+            }
         }
     }
 

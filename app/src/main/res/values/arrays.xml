@@ -19,5 +19,6 @@
         <item>Light</item>
         <item>Fan</item>
         <item>Door</item>
+        <item>Air conditioner</item>
     </string-array>
 </resources>

@@ -26,6 +26,7 @@
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
             android:layout_marginTop="@dimen/dimen_xxxlarge"
             android:hint="@string/name_room"
+            app:boxStrokeColor="@color/color_outline_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/view_toolbar">
 
             <androidx.appcompat.widget.AppCompatEditText
@@ -59,6 +60,7 @@
             android:layout_marginHorizontal="@dimen/dimen_xxxlarge"
             android:layout_marginTop="@dimen/dimen_medium"
             android:hint="@string/name_device"
+            app:boxStrokeColor="@color/color_outline_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/spn_device_type">
 
             <androidx.appcompat.widget.AppCompatEditText

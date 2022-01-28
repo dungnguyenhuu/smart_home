@@ -55,6 +55,7 @@
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_door.xml" value="0.15" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_dung.xml" value="0.1828125" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_fan.xml" value="0.15" />
+        <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_room_template.xml" value="0.21041666666666667" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_template_room_1.xml" value="0.264" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/activity_authentication.xml" value="0.203125" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/activity_main.xml" value="0.176" />
@@ -74,7 +75,7 @@
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/layout_list_content.xml" value="0.11614583333333334" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/layout_toolbar.xml" value="0.22083333333333333" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/view_room_info.xml" value="0.264" />
-        <entry key="..\:/Android/smart_home/app/src/main/res/layout/view_room_info_header.xml" value="0.264" />
+        <entry key="..\:/Android/smart_home/app/src/main/res/layout/view_room_info_header.xml" value="0.1" />
         <entry key="..\:/Android/smart_home/app/src/main/res/xml/root_preferences.xml" value="0.2598958333333333" />
       </map>
     </option>

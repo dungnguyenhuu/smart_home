@@ -25,6 +25,7 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
             R.drawable.ic_light,
             R.drawable.ic_fan,
             R.drawable.ic_door,
+            R.drawable.ic_air_conditioner,
         )
 
         override fun onBind(position: Int, model: Device?) {
@@ -36,6 +37,7 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
                     0 -> imgDevice.setImageResource(imgs[0])
                     1 -> imgDevice.setImageResource(imgs[1])
                     2 -> imgDevice.setImageResource(imgs[2])
+                    3 -> imgDevice.setImageResource(imgs[3])
                     else -> imgDevice.setImageResource(imgs[0])
                 }
                 registerChildViewAsHolderClickEvent(swDevice, mItemClickListener)
