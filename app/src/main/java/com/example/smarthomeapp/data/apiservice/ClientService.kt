@@ -29,6 +29,13 @@ interface ClientService {
     @GET("/rooms/{id}")
     fun getDevicesInRoom(@Path("id") id: Int): Single<GetDevicesInRoomResponse>
 
+    @PATCH("/rooms/{id}")
+    @Headers(Retrofits.HEADER_NO_AUTH)
+    fun turnOffAllDevices(
+        @Path("id") id: Int,
+        @NonNull @Body request: UpdateDeviceStatusRequest
+    ): Single<GetDevicesInRoomResponse>
+
     @GET("/devices")
     fun getAllDevices(): Single<GetAllDevicesResponse>
 

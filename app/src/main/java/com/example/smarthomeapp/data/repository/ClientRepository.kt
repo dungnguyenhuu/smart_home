@@ -26,6 +26,11 @@ interface ClientRepository {
 
     fun getDevicesInRoom(id: Int): Single<GetDevicesInRoomResponse>
 
+    fun turnOffAllDevices(
+        id: Int,
+        @NonNull @Body request: UpdateDeviceStatusRequest
+    ): Single<GetDevicesInRoomResponse>
+
     fun getAllDevices(): Single<GetAllDevicesResponse>
 
     fun postNewDevices(

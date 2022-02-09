@@ -29,6 +29,8 @@ interface RoomDetailContract {
         fun getImageResource(): MutableLiveData<Int>
 
         fun addDevice()
+
+        fun onTurnOffAllDevices()
     }
 
 }

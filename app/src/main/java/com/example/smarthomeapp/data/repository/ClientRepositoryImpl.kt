@@ -19,6 +19,9 @@ class ClientRepositoryImpl @Inject constructor(private val clientService: Client
 
     override fun getDevicesInRoom(id: Int) = clientService.getDevicesInRoom(id)
 
+    override fun turnOffAllDevices(id: Int, request: UpdateDeviceStatusRequest) =
+        clientService.turnOffAllDevices(id, request)
+
     override fun getAllDevices() = clientService.getAllDevices()
 
     override fun postNewDevices(request: NewDeviceRequest) =

@@ -19,6 +19,7 @@ import com.example.smarthomeapp.data.pojo.sensor.GetSensorResponse
 import com.example.smarthomeapp.data.pojo.sensor.Sensor
 import com.example.smarthomeapp.domain.device.UpdateDeviceStatusUseCase
 import com.example.smarthomeapp.domain.room.GetDevicesInRoomUseCase
+import com.example.smarthomeapp.domain.room.UpdateDevicesInRoomUseCase
 import com.example.smarthomeapp.domain.sensor.GetSensorUseCase
 import com.example.smarthomeapp.presentation.room_detail.ROOM
 import com.example.smarthomeapp.presentation.room_detail.adapter.DeviceAdapter
@@ -37,6 +38,9 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
     )
     @Inject
     lateinit var getDevicesInRoomUseCase: GetDevicesInRoomUseCase
+
+    @Inject
+    lateinit var updateDevicesInRoomUseCase: UpdateDevicesInRoomUseCase
 
     @Inject
     lateinit var updateDeviceStatusUseCase: UpdateDeviceStatusUseCase
@@ -114,6 +118,20 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
 
     override fun addDevice() {
         liveRoom.value?.let { scene?.onNavigate(it) }
+    }
+
+    override fun onTurnOffAllDevices() {
+        val param = UpdateDeviceStatusRequest(STATUS.OFF.value)
+        val pair = liveRoom.value?.let { Pair(it.id, param) }
+        fetch(
+            updateDevicesInRoomUseCase,
+            object : ApiCallback<GetDevicesInRoomResponse>(LoadingType.BLOCKING) {
+                override fun onApiResponseSuccess(response: GetDevicesInRoomResponse) {
+                    Timber.d(response.message)
+                    getDevices(liveRoom.value!!.id)
+                }
+            }, pair
+        )
     }
 
     private fun getDevices(roomId: Int) {
