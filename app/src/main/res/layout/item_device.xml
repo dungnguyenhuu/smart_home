@@ -53,6 +53,16 @@
 <!--            app:layout_constraintEnd_toEndOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="@id/img_device" />-->
 
+        <Button
+            android:id="@+id/sw_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="@id/img_device"
+            app:layout_constraintEnd_toStartOf="@id/sw_device"
+            app:layout_constraintTop_toTopOf="@id/img_device"/>
+
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/sw_device"
             android:layout_width="wrap_content"

@@ -52,6 +52,13 @@ interface ClientService {
         @NonNull @Body request: UpdateDeviceStatusRequest
     ): Single<UpdateDeviceStatusResponse>
 
+    @PATCH("/devices/mode/{id}")
+    @Headers(Retrofits.HEADER_NO_AUTH)
+    fun updateDeviceMode(
+        @Path("id") id: String,
+        @NonNull @Body request: UpdateDeviceModeRequest
+    ): Single<UpdateDeviceModeResponse>
+
     @GET("/api/sensor")
     fun getSensor(
         @Query("begin") begin: Long,

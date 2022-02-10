@@ -4,6 +4,7 @@ import com.example.smarthomeapp.data.apiservice.ClientService
 import com.example.smarthomeapp.data.pojo.authentication.LoginRequest
 import com.example.smarthomeapp.data.pojo.authentication.RegisterRequest
 import com.example.smarthomeapp.data.pojo.device.NewDeviceRequest
+import com.example.smarthomeapp.data.pojo.device.UpdateDeviceModeRequest
 import com.example.smarthomeapp.data.pojo.device.UpdateDeviceStatusRequest
 import com.example.smarthomeapp.data.pojo.sensor.GetSensorRequest
 import javax.inject.Inject
@@ -29,6 +30,9 @@ class ClientRepositoryImpl @Inject constructor(private val clientService: Client
 
     override fun updateDeviceStatus(id: String, request: UpdateDeviceStatusRequest) =
         clientService.updateDeviceStatus(id, request)
+
+    override fun updateDeviceMode(id: String, request: UpdateDeviceModeRequest) =
+        clientService.updateDeviceMode(id, request)
 
     override fun getSensor(request: GetSensorRequest) =
         clientService.getSensor(request.begin, request.end)

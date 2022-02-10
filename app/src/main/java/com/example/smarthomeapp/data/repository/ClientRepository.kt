@@ -42,5 +42,10 @@ interface ClientRepository {
         @NonNull @Body request: UpdateDeviceStatusRequest
     ): Single<UpdateDeviceStatusResponse>
 
+    fun updateDeviceMode(
+        id: String,
+        @NonNull @Body request: UpdateDeviceModeRequest
+    ): Single<UpdateDeviceModeResponse>
+
     fun getSensor(request: GetSensorRequest): Single<GetSensorResponse>
 }

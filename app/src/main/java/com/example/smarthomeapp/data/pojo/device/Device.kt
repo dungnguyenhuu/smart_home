@@ -11,11 +11,17 @@ data class Device(
     @SerializedName("type") @Expose val type: Int,
     @SerializedName("room_id") @Expose val roomId: String,
     @SerializedName("name") @Expose val name: String,
-    @SerializedName("status") @Expose val status: String
+    @SerializedName("status") @Expose val status: String,
+    @SerializedName("mode") @Expose val mode: String
+
 ) : Serializable
 
 enum class STATUS(var value: String) {
     ON("on"), OFF("off")
+}
+
+enum class MODE(var value: String) {
+    AUTO("AUTO"), MANUAL("MANUAL")
 }
 
 open class GetAllDevicesRequest
@@ -29,6 +35,14 @@ data class UpdateDeviceStatusRequest(
 )
 
 data class UpdateDeviceStatusResponse(
+    val device: Device
+) : Response()
+
+data class UpdateDeviceModeRequest(
+    @SerializedName("mode") @Expose val mode: String
+)
+
+data class UpdateDeviceModeResponse(
     val device: Device
 ) : Response()
 

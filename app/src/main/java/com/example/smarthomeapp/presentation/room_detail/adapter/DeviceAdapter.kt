@@ -6,6 +6,7 @@ import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.adapter.BindingArrayAdapter
 import com.example.smarthomeapp.base.holder.BindingHolder
 import com.example.smarthomeapp.data.pojo.device.Device
+import com.example.smarthomeapp.data.pojo.device.MODE
 import com.example.smarthomeapp.data.pojo.device.STATUS
 import com.example.smarthomeapp.databinding.ItemDeviceBinding
 
@@ -32,6 +33,8 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
             super.onBind(position, model)
             binder.apply {
                 device = model
+                swMode.text = device?.mode
+                swDevice.isEnabled = device?.mode == MODE.MANUAL.value
                 swDevice.isChecked = device?.status == STATUS.ON.value
                 when (device?.type) {
                     0 -> imgDevice.setImageResource(imgs[0])
@@ -41,6 +44,7 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
                     else -> imgDevice.setImageResource(imgs[0])
                 }
                 registerChildViewAsHolderClickEvent(swDevice, mItemClickListener)
+                registerChildViewAsHolderClickEvent(swMode, mItemClickListener)
             }
         }
     }
