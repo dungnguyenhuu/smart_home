@@ -15,6 +15,7 @@ import com.example.smarthomeapp.BR
 import com.example.smarthomeapp.R
 import com.example.smarthomeapp.base.annotation.LoadingType
 import com.example.smarthomeapp.base.scene.MvvmActivity
+import com.example.smarthomeapp.data.pojo.device.MODE
 import com.example.smarthomeapp.data.pojo.device.STATUS
 import com.example.smarthomeapp.data.pojo.device.UpdateDeviceStatusRequest
 import com.example.smarthomeapp.data.pojo.room.GetDevicesInRoomResponse
@@ -100,6 +101,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
                 light2?.setImageResource(viewModel.getIcon().value!![1])
                 light3?.setImageResource(viewModel.getIcon().value!![2])
                 light4?.setImageResource(viewModel.getIcon().value!![3])
+
                 btn_add_device.isEnabled = newNumber < totalDevice
                 number_active.text = newNumber.toString()
                 if(newNumber <4){
@@ -107,7 +109,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
                     light_name_4?.text = ""
                     layout_light_4?.alpha = LIGHT_DISABLE
                 }else{
-                    light4?.isEnabled = true
+                    light4?.isEnabled= viewModel.getListDevice()[3].mode == MODE.MANUAL.value
                     light_name_4?.text = viewModel.getListDevice()[3].name
                     layout_light_4?.alpha = LIGHT_ENABLE
                 }
@@ -117,7 +119,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
                     light_name_3?.text = ""
                     layout_light_3?.alpha = LIGHT_DISABLE
                 }else{
-                    light3?.isEnabled = true
+                    light3?.isEnabled = viewModel.getListDevice()[2].mode == MODE.MANUAL.value
                     light_name_3?.text = viewModel.getListDevice()[2].name
                     layout_light_3?.alpha = LIGHT_ENABLE
                 }
@@ -127,7 +129,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
                     light_name_2?.text = ""
                     layout_light_2?.alpha = LIGHT_DISABLE
                 }else{
-                    light2?.isEnabled = true
+                    light2?.isEnabled = viewModel.getListDevice()[1].mode == MODE.MANUAL.value
                     light_name_2?.text = viewModel.getListDevice()[1].name
                     layout_light_2?.alpha = LIGHT_ENABLE
                 }
@@ -137,7 +139,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
                     light_name_1?.text = ""
                     layout_light_1?.alpha = LIGHT_DISABLE
                 }else{
-                    light1?.isEnabled = true
+                    light1?.isEnabled = viewModel.getListDevice()[0].mode == MODE.MANUAL.value
                     light_name_1?.text = viewModel.getListDevice()[0].name
                     layout_light_1?.alpha = LIGHT_ENABLE
                 }
