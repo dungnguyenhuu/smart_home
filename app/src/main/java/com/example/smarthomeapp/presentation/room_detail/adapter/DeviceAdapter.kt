@@ -45,6 +45,7 @@ class DeviceAdapter : BindingArrayAdapter<Device>() {
                 }
                 registerChildViewAsHolderClickEvent(swDevice, mItemClickListener)
                 registerChildViewAsHolderClickEvent(swMode, mItemClickListener)
+
             }
         }
     }

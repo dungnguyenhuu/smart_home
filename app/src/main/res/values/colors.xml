@@ -20,4 +20,7 @@
     <color name="background">#222831</color>
     <color name="button_background">#393E46</color>
     <color name="grey_transparent">#80DDDDDD</color>
+
+    <color name="templateColorBg">#ffffe6</color>
+
 </resources>

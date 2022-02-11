@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_active"
+            android:id="@+id/tv_total_device"
             style="@style/txtViewRoomInfo"
             android:layout_marginStart="@dimen/dimen_xxmedium"
             android:text="@string/row1_top_detail_room"
@@ -28,12 +28,13 @@
             app:layout_constraintTop_toTopOf="@id/img_device" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/number_total"
             style="@style/txtViewRoomInfo"
             android:layout_marginEnd="@dimen/dimen_xxmedium"
-            android:text="@string/number_in_detail_room"
+            android:text=""
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_active" />
+            app:layout_constraintTop_toTopOf="@id/tv_total_device" />
 
         <View
             android:id="@+id/view_line1"
@@ -41,14 +42,14 @@
             android:layout_height="@dimen/dimen_line"
             android:layout_marginHorizontal="@dimen/dimen_medium"
             android:background="@color/gray"
-            app:layout_constraintBottom_toBottomOf="@id/tv_active"
-            app:layout_constraintBottom_toTopOf="@id/tv_inactive"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_device"
+            app:layout_constraintBottom_toTopOf="@id/tv_active"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/img_device"
-            app:layout_constraintTop_toBottomOf="@id/tv_active" />
+            app:layout_constraintTop_toBottomOf="@id/tv_total_device" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_inactive"
+            android:id="@+id/tv_active"
             style="@style/txtViewRoomInfo"
             android:layout_marginStart="@dimen/dimen_xxmedium"
             android:text="@string/row2_top_detail_room"
@@ -57,13 +58,14 @@
             app:layout_constraintTop_toBottomOf="@id/view_line1" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/number_active"
             style="@style/txtViewRoomInfo"
             android:layout_marginEnd="@dimen/dimen_xxmedium"
-            android:text="@string/number_in_detail_room"
+            android:text=""
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/tv_inactive"
+            app:layout_constraintBottom_toBottomOf="@id/tv_active"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_inactive" />
+            app:layout_constraintTop_toTopOf="@id/tv_active" />
 
         <View
             android:id="@+id/view_line2"
@@ -74,7 +76,7 @@
             app:layout_constraintBottom_toTopOf="@id/tv_usage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/img_device"
-            app:layout_constraintTop_toBottomOf="@id/tv_inactive" />
+            app:layout_constraintTop_toBottomOf="@id/tv_active" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_usage"

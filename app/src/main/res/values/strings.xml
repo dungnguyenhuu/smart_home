@@ -26,8 +26,8 @@
     <string name="register_success">Register successfully. Please login to continue.</string>
 
     <!-- Room detail -->
-    <string name="row1_top_detail_room">Active</string>
-    <string name="row2_top_detail_room">Inactive</string>
+    <string name="row1_top_detail_room">Total</string>
+    <string name="row2_top_detail_room">Active</string>
     <string name="row3_top_detail_room">Usage</string>
     <string name="turn_off_all_devices">Turn off all devices</string>
     <string name="number_in_detail_room">5</string>

@@ -9,7 +9,8 @@ import java.util.*
 
 data class Room(
     @SerializedName("id") @Expose val id: Int,
-    @SerializedName("name") @Expose val name: String
+    @SerializedName("name") @Expose val name: String,
+    @SerializedName("total_device") @Expose val totalDevice: Int,
 ) : Serializable
 
 open class GetAllRoomsRequest

@@ -82,19 +82,42 @@
                 tools:text="@tools:sample/us_zipcodes"
                 android:background="@drawable/bgr_round"/>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_room_template"
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/img_room_template"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/room_template_1"-->
+<!--                android:scaleType="fitXY"-->
+<!--                app:imageResource="@{vm.getImageResource}"-->
+<!--                android:layout_marginTop="@dimen/dimen_common"-->
+<!--                android:layout_marginHorizontal="@dimen/dimen_large"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_humidity" />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/templateLayoutBorder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/room_template_1"
-                android:scaleType="fitXY"
-                app:imageResource="@{vm.getImageResource}"
-                android:layout_marginTop="@dimen/dimen_common"
+                android:padding="@dimen/dimen_medium"
                 android:layout_marginHorizontal="@dimen/dimen_large"
+                android:layout_marginTop="@dimen/dimen_large"
+                android:background="@drawable/bgr_template_border"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_humidity" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_temperature" >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/templateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_medium"
+                    android:background="@drawable/bgr_template"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
 
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_device"
                 android:layout_width="match_parent"
@@ -102,7 +125,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_large"
                 android:paddingBottom="@dimen/dimen_large"
                 app:layoutManager="@{RLMH.linear(context, RLMH.VERT, false)}"
-                app:layout_constraintTop_toBottomOf="@id/img_room_template"
+                app:layout_constraintTop_toBottomOf="@id/templateLayoutBorder"
                 app:rvAdapter="@{vm.adapter}"
                 tools:itemCount="4"
                 tools:listitem="@layout/item_device" />

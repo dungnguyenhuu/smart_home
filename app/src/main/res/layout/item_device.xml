@@ -56,9 +56,9 @@
         <Button
             android:id="@+id/sw_mode"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="Auto"
-            android:background="@null"
+            android:background="@drawable/bgr_template_border"
             app:layout_constraintBottom_toBottomOf="@id/img_device"
             app:layout_constraintEnd_toStartOf="@id/sw_device"
             app:layout_constraintTop_toTopOf="@id/img_device"/>
