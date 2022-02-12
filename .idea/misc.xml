@@ -55,7 +55,9 @@
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_door.xml" value="0.15" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_dung.xml" value="0.1828125" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_fan.xml" value="0.15" />
+        <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_no_wifi.xml" value="0.171" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_room_template.xml" value="0.21041666666666667" />
+        <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_speaker.xml" value="0.171" />
         <entry key="..\:/Android/smart_home/app/src/main/res/drawable/ic_template_room_1.xml" value="0.264" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/activity_authentication.xml" value="0.203125" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/activity_main.xml" value="0.176" />

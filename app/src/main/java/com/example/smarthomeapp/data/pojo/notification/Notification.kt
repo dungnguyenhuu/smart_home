@@ -4,6 +4,7 @@ import java.io.Serializable
 
 data class Notification(
     val id: Int,
+    val type: Int,
     val title: String,
     val description: String
 ) : Serializable
