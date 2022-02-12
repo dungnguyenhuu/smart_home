@@ -59,11 +59,7 @@ class DeviceViewModel @Inject constructor(application: Application) :
     override fun getDeviceName() = deviceName
 
     override fun addDevice() {
-        Log.i("tesss","position view function: "+livePosition.value)
-
         val deviceRequest = NewDeviceRequest(livePosition.value!!, deviceType.value!!, liveRoom.value?.id!!, "${deviceName.value}", STATUS.OFF.value)
-        Log.i("tesss","position view function request: "+deviceRequest)
-
         fetch(
             postNewDeviceUseCase,
             object : ApiCallback<PostNewDevicesResponse>(LoadingType.BLOCKING) {
