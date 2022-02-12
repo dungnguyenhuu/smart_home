@@ -31,18 +31,18 @@ class NotificationViewModel @Inject constructor(application: Application) :
     override fun getNotificationController() = controller
 
     private fun loadNotification() {
-        val noti1 = Notification(1, "Noti 1", "First notification")
-        val noti2 = Notification(2, "Noti 2", "Second notification")
-        val noti3 = Notification(3, "Noti 3", "Third notification")
-        val noti4 = Notification(4, "Noti 4", "Fourth notification")
-        val noti5 = Notification(5, "Noti 5", "Fifth notification")
-        val noti6 = Notification(6, "Noti 6", "Sixth notification")
-        val noti7 = Notification(7, "Noti 7", "Seventh notification")
-        val noti8 = Notification(8, "Noti 8", "Eighth notification")
-        val noti9 = Notification(9, "Noti 9", "Ninth notification")
-        val noti10 = Notification(10, "Noti 10", "Tenth notification")
-        val noti11 = Notification(11, "Noti 11", "Eleventh notification")
-        val noti12 = Notification(12, "Noti 12", "Twelfth notification")
+        val noti1 = Notification(1, "Fan over heating", "Running for 34 hrs")
+        val noti2 = Notification(2, "Speaker battery low", "10% charge remaining")
+        val noti3 = Notification(3, "Light have been added", "The light has been successfully added to the living room")
+        val noti4 = Notification(4, "Front door lock was opened", "Front door lock was opened")
+        val noti5 = Notification(5, "Fan over heating", "Running for 35 hrs")
+        val noti6 = Notification(6, "Speaker battery low", "10% charge remaining")
+        val noti7 = Notification(7, "Front door lock was opened", "Front door lock was opened")
+        val noti8 = Notification(8, "Light have been added", "The light has been successfully added to the bedroom")
+        val noti9 = Notification(9, "Light have been added", "The light has been successfully added to the living room")
+        val noti10 = Notification(10, "Fan over heating", "Tenth notification")
+        val noti11 = Notification(11, "Wifi connection lost", "Running for 30 hrs")
+        val noti12 = Notification(12, "Speaker battery low", "10% charge remaining")
 
         val notiList = arrayListOf(
             noti1,

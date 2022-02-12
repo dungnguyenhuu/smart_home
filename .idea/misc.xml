@@ -77,32 +77,19 @@
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/view_room_info.xml" value="0.264" />
         <entry key="..\:/Android/smart_home/app/src/main/res/layout/view_room_info_header.xml" value="0.1" />
         <entry key="..\:/Android/smart_home/app/src/main/res/xml/root_preferences.xml" value="0.2598958333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/bgr_room_info.xml" value="0.3675925925925926" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/bgr_round.xml" value="0.18958333333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/bgr_template.xml" value="0.3675925925925926" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/bgr_template_border.xml" value="0.3675925925925926" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/ic_lighting_off.xml" value="0.18958333333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/drawable/ic_sound.xml" value="0.22135416666666666" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/activity_room_detail.xml" value="0.33" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_device.xml" value="0.25" />
+        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/activity_room_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_device.xml" value="0.42018537590113286" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_device_seek_bar.xml" value="0.20520833333333333" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_device_switch.xml" value="0.20520833333333333" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_loading_wrapper.xml" value="0.20520833333333333" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/item_room.xml" value="0.20520833333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/layout_banner.xml" value="0.20520833333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/layout_list_content.xml" value="0.20520833333333333" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/layout_toolbar.xml" value="0.20520833333333333" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/template_1.xml" value="0.25" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/template_2.xml" value="0.1" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/template_3.xml" value="0.1" />
-        <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/template_4.xml" value="0.1734375" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/view_room_info.xml" value="0.20520833333333333" />
         <entry key="..\:/LeviAckerman/20211/TruyenThongIOT/smart_home/app/src/main/res/layout/view_room_info_header.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

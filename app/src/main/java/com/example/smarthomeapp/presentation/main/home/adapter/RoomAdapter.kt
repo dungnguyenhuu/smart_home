@@ -34,6 +34,9 @@ class RoomAdapter : BindingArrayAdapter<Room>() {
                 when (room?.name) {
                     "Bathroom" -> imgRoom.setImageResource(imgs[0])
                     "Bedroom" -> imgRoom.setImageResource(imgs[1])
+                    "Bedroom 1" -> imgRoom.setImageResource(imgs[1])
+                    "Bedroom 2" -> imgRoom.setImageResource(imgs[1])
+                    "Bedroom 3" -> imgRoom.setImageResource(imgs[1])
                     "Kitchen" -> imgRoom.setImageResource(imgs[2])
                     "Living Room" -> imgRoom.setImageResource(imgs[3])
                 }
