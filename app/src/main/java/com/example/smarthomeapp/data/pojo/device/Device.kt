@@ -50,8 +50,8 @@ data class UpdateDeviceModeResponse(
 ) : Response()
 
 data class NewDeviceRequest(
-    @SerializedName("type") @Expose val type: Int,
     @SerializedName("position") @Expose val position: Int,
+    @SerializedName("type") @Expose val type: Int,
     @SerializedName("room_id") @Expose val roomId: Int,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("status") @Expose val status: String

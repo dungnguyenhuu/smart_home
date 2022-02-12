@@ -50,6 +50,9 @@ fun getTemplate(name: String): Int {
         "Bathroom" -> return R.layout.template_4
 
         "Bedroom" -> return R.layout.template_3
+        "Bedroom 1" -> return R.layout.template_3
+        "Bedroom 2" -> return R.layout.template_3
+        "Bedroom 3" -> return R.layout.template_3
 
         "Kitchen" -> return R.layout.template_2
 

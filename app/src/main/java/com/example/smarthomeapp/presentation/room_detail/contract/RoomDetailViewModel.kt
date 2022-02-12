@@ -191,7 +191,6 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
                     devices = response.devices as ArrayList<Device>
                     var tempRemotes = arrayListOf<Boolean>()
                     for (i in 0 until devices.size){
-                        Log.i("tesss","device: "+i+" "+devices[i].remote)
                         tempRemotes!!.add(devices[i].remote)
                         if(devices[i].remote) {
                             if (devices[i].status == STATUS.ON.value) {
