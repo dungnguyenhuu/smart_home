@@ -69,7 +69,7 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
 
     private var liveLightIcons = MutableLiveData<ArrayList<Int>>()
 
-    private var numberDevice = MutableLiveData<Int>()
+    private var remoteDevice = MutableLiveData<ArrayList<Boolean>>()
 
     var devices = arrayListOf<Device>()
 
@@ -152,11 +152,16 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
 
     override fun getImageResource() = imageResource
 
-    override fun getNumberDevice() = numberDevice
+    override fun getIcon() = liveLightIcons
 
+    override fun getIdDevice(position : Int) = devices[position].db_id
 
-    override fun addDevice() {
-        liveRoom.value?.let { scene?.onNavigate(it) }
+    override fun getListDevice() = devices
+
+    override fun getRemoteDevice() = remoteDevice
+
+    override fun addDevice(position: Int) {
+        liveRoom.value?.let { scene?.onNavigate(it,position) }
     }
 
     override fun onTurnOffAllDevices() {
@@ -173,12 +178,6 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
         )
     }
 
-    override fun getIcon() = liveLightIcons
-
-    override fun getIdDevice(position : Int) = devices[position].db_id
-
-    override fun getListDevice() = devices
-
     fun getIconLightResource() = liveLightIcons
 
     private fun getDevices(roomId: Int) {
@@ -186,17 +185,28 @@ class RoomDetailViewModel @Inject constructor(application: Application) :
             getDevicesInRoomUseCase,
             object : ApiCallback<GetDevicesInRoomResponse>(LoadingType.BLOCKING) {
                 override fun onApiResponseSuccess(response: GetDevicesInRoomResponse) {
-                    adapter.setData(response.devices)
+                    adapter.setData(response.devices.filter {
+                        it.remote
+                    })
                     devices = response.devices as ArrayList<Device>
+                    var tempRemotes = arrayListOf<Boolean>()
                     for (i in 0 until devices.size){
-                        if(devices[i].status == STATUS.ON.value){
-                            liveLightIcons.value!![i]=R.drawable.ic_lighting_on
-                        }else{
-                            liveLightIcons.value!![i]=R.drawable.ic_lighting_off
+                        Log.i("tesss","device: "+i+" "+devices[i].remote)
+                        tempRemotes!!.add(devices[i].remote)
+                        if(devices[i].remote) {
+                            if (devices[i].status == STATUS.ON.value) {
+                                liveLightIcons.value!![devices[i].position-1] =
+                                    R.drawable.ic_lighting_on
+                            } else {
+                                liveLightIcons.value!![devices[i].position-1] =
+                                    R.drawable.ic_lighting_off
+                            }
                         }
                     }
-
-                    numberDevice.value = devices.size
+                    while (tempRemotes.size <5){
+                        tempRemotes.add(false)
+                    }
+                    remoteDevice.value = tempRemotes
                 }
             }, roomId
         )

@@ -73,8 +73,8 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
         onBackPressed()
     }
 
-    override fun onNavigate(room: Room) {
-        this.startDevice(room)
+    override fun onNavigate(room: Room, position: Int) {
+        this.startDevice(room,position)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,51 +95,55 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
             }
         }
 
-        val numberDeviceObserver = Observer<Int> { newNumber ->
+        val remoteDeviceObserver = Observer<ArrayList<Boolean>> { newRemote ->
             viewBinding.apply {
                 light1?.setImageResource(viewModel.getIcon().value!![0])
                 light2?.setImageResource(viewModel.getIcon().value!![1])
                 light3?.setImageResource(viewModel.getIcon().value!![2])
                 light4?.setImageResource(viewModel.getIcon().value!![3])
 
-                btn_add_device.isEnabled = newNumber < totalDevice
-                number_active.text = newNumber.toString()
-                if(newNumber <4){
-                    light4?.isEnabled = false
+//                btn_add_device.isEnabled = newNumber < totalDevice
+                var active =0;
+                newRemote.forEach {
+                    if(it) active++
+                }
+                number_active.text = active.toString()
+                if(!newRemote[3]){
+//                    light4?.isEnabled = false
                     light_name_4?.text = ""
                     layout_light_4?.alpha = LIGHT_DISABLE
                 }else{
-                    light4?.isEnabled= viewModel.getListDevice()[3].mode == MODE.MANUAL.value
+//                    light4?.isEnabled= viewModel.getListDevice()[3].mode == MODE.MANUAL.value
                     light_name_4?.text = viewModel.getListDevice()[3].name
                     layout_light_4?.alpha = LIGHT_ENABLE
                 }
 
-                if(newNumber <3){
-                    light3?.isEnabled = false
+                if(!newRemote[2]){
+//                    light3?.isEnabled = false
                     light_name_3?.text = ""
                     layout_light_3?.alpha = LIGHT_DISABLE
                 }else{
-                    light3?.isEnabled = viewModel.getListDevice()[2].mode == MODE.MANUAL.value
+//                    light3?.isEnabled = viewModel.getListDevice()[2].mode == MODE.MANUAL.value
                     light_name_3?.text = viewModel.getListDevice()[2].name
                     layout_light_3?.alpha = LIGHT_ENABLE
                 }
 
-                if(newNumber <2){
-                    light2?.isEnabled = false
+                if(!newRemote[1]){
+//                    light2?.isEnabled = false
                     light_name_2?.text = ""
                     layout_light_2?.alpha = LIGHT_DISABLE
                 }else{
-                    light2?.isEnabled = viewModel.getListDevice()[1].mode == MODE.MANUAL.value
+//                    light2?.isEnabled = viewModel.getListDevice()[1].mode == MODE.MANUAL.value
                     light_name_2?.text = viewModel.getListDevice()[1].name
                     layout_light_2?.alpha = LIGHT_ENABLE
                 }
 
-                if(newNumber <1){
-                    light1?.isEnabled = false
+                if(!newRemote[0]){
+//                    light1?.isEnabled = false
                     light_name_1?.text = ""
                     layout_light_1?.alpha = LIGHT_DISABLE
                 }else{
-                    light1?.isEnabled = viewModel.getListDevice()[0].mode == MODE.MANUAL.value
+//                    light1?.isEnabled = viewModel.getListDevice()[0].mode == MODE.MANUAL.value
                     light_name_1?.text = viewModel.getListDevice()[0].name
                     layout_light_1?.alpha = LIGHT_ENABLE
                 }
@@ -147,7 +151,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
             }
         }
         viewModel.getIcon().observe(this, iconObserver)
-        viewModel.getNumberDevice().observe(this, numberDeviceObserver)
+        viewModel.getRemoteDevice().observe(this, remoteDeviceObserver)
 
         viewBinding.apply {
             //light1 setting
@@ -173,18 +177,22 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
     }
 
     private fun onClickLightTemplate(position: Int, view: ImageView) {
-        var status = ""
-        if (viewModel.getIcon().value!![position] == R.drawable.ic_lighting_off) {
-            status = STATUS.ON.value
-            viewModel.getIcon().value!![position] = R.drawable.ic_lighting_on
-        } else {
-            status = STATUS.OFF.value
-            viewModel.getIcon().value!![position] = R.drawable.ic_lighting_off
+        if(viewModel.getRemoteDevice().value!![position]) {
+            var status = ""
+            if (viewModel.getIcon().value!![position] == R.drawable.ic_lighting_off) {
+                status = STATUS.ON.value
+                viewModel.getIcon().value!![position] = R.drawable.ic_lighting_on
+            } else {
+                status = STATUS.OFF.value
+                viewModel.getIcon().value!![position] = R.drawable.ic_lighting_off
+            }
+            view?.setImageResource(viewModel.getIcon().value!![position])
+            val param = UpdateDeviceStatusRequest(status)
+            val pair = Pair(viewModel.getIdDevice(0), param)
+            viewModel.updateDeviceStatus(pair)
+        }else{
+            viewModel.addDevice(position)
         }
-        view?.setImageResource(viewModel.getIcon().value!![position])
-        val param = UpdateDeviceStatusRequest(status)
-        val pair = Pair(viewModel.getIdDevice(0), param)
-        viewModel.updateDeviceStatus(pair)
     }
 
 }

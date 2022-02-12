@@ -12,7 +12,10 @@ data class Device(
     @SerializedName("room_id") @Expose val roomId: String,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("status") @Expose val status: String,
-    @SerializedName("mode") @Expose val mode: String
+    @SerializedName("mode") @Expose val mode: String,
+    @SerializedName("remote") @Expose val remote: Boolean,
+    @SerializedName("position") @Expose val position: Int
+
 
 ) : Serializable
 
@@ -48,7 +51,8 @@ data class UpdateDeviceModeResponse(
 
 data class NewDeviceRequest(
     @SerializedName("type") @Expose val type: Int,
-    @SerializedName("room_id") @Expose val roomId: String,
+    @SerializedName("position") @Expose val position: Int,
+    @SerializedName("room_id") @Expose val roomId: Int,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("status") @Expose val status: String
 )

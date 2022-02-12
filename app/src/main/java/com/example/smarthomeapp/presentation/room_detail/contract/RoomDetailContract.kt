@@ -14,7 +14,7 @@ interface RoomDetailContract {
 
         fun navBack()
 
-        fun onNavigate(room: Room)
+        fun onNavigate(room: Room, position: Int)
 
     }
 
@@ -30,7 +30,7 @@ interface RoomDetailContract {
 
         fun getImageResource(): MutableLiveData<Int>
 
-        fun addDevice()
+        fun addDevice(position: Int)
 
         fun onTurnOffAllDevices()
 
@@ -40,7 +40,7 @@ interface RoomDetailContract {
 
         fun updateDeviceStatus(pair: Pair<String, UpdateDeviceStatusRequest>)
 
-        fun getNumberDevice(): MutableLiveData<Int>
+        fun getRemoteDevice(): MutableLiveData<ArrayList<Boolean>>
 
         fun getListDevice(): ArrayList<Device>
 

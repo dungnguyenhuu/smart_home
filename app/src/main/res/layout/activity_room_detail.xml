@@ -130,18 +130,17 @@
                 tools:itemCount="4"
                 tools:listitem="@layout/item_device" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_add_device"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.Button"
-                android:text="@string/btn_add"
-                android:background="@drawable/bgr_round"
-                android:onClick="@{_->vm.addDevice()}"
-                android:layout_marginHorizontal="@dimen/dimen_large"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcv_device" />
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/btn_add_device"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/Widget.Button"-->
+<!--                android:text="@string/btn_add"-->
+<!--                android:background="@drawable/bgr_round"-->
+<!--                android:layout_marginHorizontal="@dimen/dimen_large"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rcv_device" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
