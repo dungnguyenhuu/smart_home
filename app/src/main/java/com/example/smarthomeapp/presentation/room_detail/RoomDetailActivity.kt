@@ -191,7 +191,7 @@ class RoomDetailActivity : MvvmActivity<RoomDetailContract.Scene, RoomDetailCont
             }
             view?.setImageResource(viewModel.getIcon().value!![position])
             val param = UpdateDeviceStatusRequest(status)
-            val pair = Pair(viewModel.getIdDevice(0), param)
+            val pair = Pair(viewModel.getIdDevice(position), param)
             viewModel.updateDeviceStatus(pair)
         }else{
             viewModel.addDevice(position)
